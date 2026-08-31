@@ -1,13 +1,26 @@
 # Bitácora · descargas
 
-Aquí viven **solo los instaladores** de Bitácora, la aplicación de gestión de la
-consulta. El código fuente está en un repositorio privado aparte.
+Aquí viven **los instaladores y el manual** de Bitácora, la aplicación de gestión de
+la consulta. El código fuente está en un repositorio privado aparte.
+
+Web: **https://emiliocastilo.github.io/bitacora-descargas/**
 
 ## Instalar
 
-Ve a [Releases](../../releases) y descarga el instalador más reciente
-(`Bitacora-win-Setup.exe`). Una vez instalada, la aplicación se actualiza sola: no
-hace falta volver por aquí.
+Descarga el instalador más reciente:
+<https://github.com/emiliocastilo/bitacora-descargas/releases/latest/download/Bitacora-win-Setup.exe>
+
+O ve a [Releases](../../releases) y coge el `Bitacora-win-Setup.exe` de la versión de
+arriba. Una vez instalada, la aplicación se actualiza sola: no hace falta volver por aquí.
+
+## Manual
+
+La guía de uso completa está en **[MANUAL.md](MANUAL.md)** (y en la web de arriba).
+Cada versión adjunta además su manual en su
+[release](https://github.com/emiliocastilo/bitacora-descargas/releases).
+
+Este archivo, `index.md`, `_config.yml` y `MANUAL.md` se generan desde el repositorio
+del código en cada release; no se editan aquí a mano.
 
 ## Por qué este repositorio existe
 
@@ -20,7 +33,7 @@ un repositorio público aparte, que es este.
 
 Ningún dato de pacientes, ninguna base de datos y ninguna copia de seguridad. Los datos
 de la consulta viven cifrados en el ordenador de la profesional y no salen de ahí; lo
-que se publica aquí es únicamente el programa.
+que se publica aquí es únicamente el programa y su manual.
 
 ## Aviso al instalar
 
