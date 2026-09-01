@@ -204,6 +204,12 @@ Cinco secciones a la izquierda: **Agenda**, **Pacientes**, **Facturación**,
 NIE, fecha de nacimiento, teléfono y correo (el correo es opcional, pero sin él
 no se le pueden enviar avisos de cita).
 
+Debajo va el **domicilio**, también opcional. Se puede dejar en blanco y
+completarlo después desde la ficha, pero hace falta para poder facturarle: la
+factura lleva la dirección del destinatario. Va todo junto —calle, código
+postal, municipio y provincia—: media dirección no vale, y la ventana avisa si
+se rellenan unos campos y otros no.
+
 ![Ventana de dar de alta a un paciente](imagenes/dar-de-alta.png)
 
 ### Abrir un caso
@@ -234,6 +240,12 @@ adelante (§10): una ficha con casos abiertos no se puede suprimir.
 
 En Pacientes, con la persona elegida: **Registrar consentimiento firmado…**, y
 se adjunta el documento escaneado. Queda guardado cifrado dentro de la ficha.
+
+Si el escaneo ya está a la vista en el Explorador, se puede **arrastrar el PDF**
+sobre el recuadro de puntos que hay justo debajo de esos botones y soltarlo ahí:
+hace lo mismo sin pasar por el diálogo de archivos. El recuadro se enciende
+cuando lo que se lleva encima vale, y se pone en rojo cuando no (por ejemplo, un
+Word en vez de un PDF, o varios archivos a la vez).
 
 ---
 
@@ -352,9 +364,11 @@ Pestaña **Material de trabajo** de la ficha. Cuelga del caso elegido arriba, ig
 que los informes.
 
 Para registrar algo: nombre (por ejemplo *WAIS-IV* o *BDI-II*), fecha en
-que se pasó, notas o interpretación si se quiere, y **Elegir archivo y guardar**.
-El archivo (PDF, o una foto/escaneo en JPG o PNG) se guarda
-cifrado dentro de la ficha; en disco no queda nada legible.
+que se pasó, notas o interpretación si se quiere, y el archivo. El archivo se
+puede **arrastrar** sobre el recuadro de puntos o buscarlo con **…o elegir
+archivo y guardar**; por los dos caminos se guarda con el nombre, la fecha y las
+notas que estén escritos arriba. El archivo (PDF, o una foto/escaneo en JPG o
+PNG) se guarda cifrado dentro de la ficha; en disco no queda nada legible.
 
 Con un material elegido de la lista:
 
