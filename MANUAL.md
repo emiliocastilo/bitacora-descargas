@@ -108,6 +108,9 @@ Tres cosas en esta pestaña:
   se cobra entera. Vienen 24 puestas.
 - **Recordar al paciente**: horas antes de la sesión para enviarle el correo de
   recordatorio. Un 0 significa no enviar ninguno.
+- **Plazo para recuperar una sesión**: días que se dan por defecto cuando el
+  pago de una sesión cancelada se deja como crédito. El consentimiento anuncia
+  un mes (30); se puede ampliar caso por caso, con un motivo.
 
 Pulsar **Guardar tarifas**.
 
@@ -269,6 +272,8 @@ En la columna **Cobro**:
 - **Neutro**: sin pagar, pero todavía queda margen antes de la sesión.
 - **Ámbar**: sin pagar y ya dentro de las horas de aviso. Es la que hay que
   mirar.
+- **Azul**: cancelada sin cargo, pero ya estaba pagada: el importe queda como
+  crédito para una sesión de recuperación.
 
 ### Cerrar una sesión
 
@@ -277,18 +282,49 @@ Al elegir una sesión de la lista se habilita el panel de la derecha:
 - **Marcar como pagada** (y **Anular el pago** si se marcó por error).
 - **Realizada**: la sesión se dio.
 - **No asistió**: no vino y no avisó. Se cobra.
+- **Reprogramar**: mueve la sesión a otra fecha conservando el importe y el
+  pago. Es lo que se usa cuando el paciente no puede venir pero se le va a dar
+  la sesión igualmente.
 - **Cancelar sesión**: cancelada con menos aviso del pactado. Se cobra entera.
 - **Cancelar sin cargo**: cancelada en plazo, o por fuerza mayor. No se cobra.
 
+Si al dar una sesión por **realizada** ya estaba pagada, sale una ventana
+**Emitir factura** que ofrece facturarla ahí mismo, sin pasar por Facturación. Si
+el caso es de pareja se elige a quién se le factura; si no, basta con confirmar.
+**Ahora no** la deja sin facturar: se puede emitir después desde Facturación (§8).
+
+### Una sesión pagada que se cancela
+
+Si la sesión ya estaba pagada, en vez de «Cancelar sin cargo» aparecen dos
+opciones, porque hay que decidir qué pasa con el dinero:
+
+- **Cancelar · dejar crédito para recuperar**: el importe queda como crédito
+  para una sesión de recuperación de ese mismo caso. Se pone una fecha límite
+  (por defecto, la que diga Administración; ampliarla más allá pide un motivo,
+  que queda registrado). La decisión de perdonar un aviso tardío es tuya: aquí
+  no se miran las 24 h.
+- **Cancelar · devolver el importe**: no queda ni cobro ni crédito. El
+  reintegro se hace por fuera.
+
+Cuando el crédito existe, la sesión que lo generó muestra **Ampliar plazo del
+crédito** en el panel.
+
+### Recuperar la sesión
+
+Al agendar una **Nueva sesión** de un caso con créditos disponibles aparece
+**Cubrir con crédito**. Si se elige uno, la sesión queda pagada sin cobrar de
+nuevo y se factura con normalidad cuando se dé por realizada. Si el importe del
+crédito no coincide con el de la sesión, la diferencia se ajusta aparte.
+
 ---
 
-## 6. Ficha, historia clínica, informes y pruebas
+## 6. Ficha, historia clínica, informes y material de trabajo
 
 Desde **Pacientes** → **Abrir ficha**.
 
 La ficha reúne los datos de la persona, sus casos abiertos, si tiene el
-consentimiento firmado, sus informes y las pruebas psicométricas que se le
-hayan pasado.
+consentimiento firmado, sus informes y el material de trabajo que se le
+haya pasado.
 
 ### La historia clínica
 
@@ -310,28 +346,28 @@ En la ficha: elegir el caso, escribir un título y **Crear informe**. Se redacta
 igual, con la barra de formato y su vista previa. **Exportar a PDF…** lo saca con
 el logotipo de marca de agua, si se subió uno en Administración.
 
-### Pruebas
+### Material de trabajo
 
-Pestaña **Pruebas** de la ficha. Cuelgan del caso elegido arriba, igual que los
-informes.
+Pestaña **Material de trabajo** de la ficha. Cuelga del caso elegido arriba, igual
+que los informes.
 
-Para registrar una: nombre del test (por ejemplo *WAIS-IV* o *BDI-II*), fecha en
+Para registrar algo: nombre (por ejemplo *WAIS-IV* o *BDI-II*), fecha en
 que se pasó, notas o interpretación si se quiere, y **Elegir archivo y guardar**.
-El archivo con el resultado (PDF, o una foto/escaneo en JPG o PNG) se guarda
+El archivo (PDF, o una foto/escaneo en JPG o PNG) se guarda
 cifrado dentro de la ficha; en disco no queda nada legible.
 
-Con una prueba elegida de la lista:
+Con un material elegido de la lista:
 
 - **Previsualizar** — abre el archivo en una ventana aparte: las imágenes tal
   cual y los PDF como una imagen por página. El documento se descifra en memoria,
   no se escribe en el disco.
 - **Guardar copia…** — descifra el archivo y lo deja donde se diga, para
   adjuntarlo a un informe o abrirlo con otro programa.
-- **Eliminar** — borra la prueba y su archivo. Queda anotado en el registro de
+- **Eliminar** — borra el material y su archivo. Queda anotado en el registro de
   accesos, como cualquier otro movimiento sobre la historia clínica.
 
-Las pruebas entran también en el expediente que se le entrega al paciente si
-ejerce su derecho de acceso.
+El material de trabajo entra también en el expediente que se le entrega al
+paciente si ejerce su derecho de acceso.
 
 ### Cuestionarios
 
@@ -367,7 +403,7 @@ misma contraseña, y si Google está conectado sube sola a Drive, a la carpeta
 
 La copia diaria (`bitacora-….zip`) solo lleva la base de datos: es pequeña y se
 conservan los últimos días. Los documentos adjuntos (consentimientos, informes,
-pruebas) se guardan **aparte, un solo ejemplar de cada uno**, en la carpeta
+material de trabajo) se guardan **aparte, un solo ejemplar de cada uno**, en la carpeta
 `copias/adjuntos` de al lado —y en su equivalente en Drive—. Así la copia de
 cada día no vuelve a arrastrar los mismos documentos.
 
@@ -440,7 +476,8 @@ para enviarla.
 
 ![Resumen mensual, con las citas por estado y el detalle de cobros del mes](imagenes/resumen-mensual.png)
 
-**Resumen mensual** → elegir el mes. Sale lo que suele pedir la gestoría cada mes:
+**Resumen mensual** → elegir el mes (el selector va por mes y año, sin día). Sale
+lo que suele pedir la gestoría cada mes:
 cuántas sesiones hubo por estado (realizadas, no asistió, canceladas…), el total
 cobrado, y el detalle de cada cobro.
 
@@ -454,9 +491,21 @@ quien paga, y el importe: los mismos datos que llevaría la factura, aunque esa
 sesión todavía no se haya facturado. Es lo que la gestoría necesita para
 declarar el ingreso.
 
+**Créditos de sesión.** Si en el mes hubo créditos (sesiones pagadas que se
+cancelaron sin cargo y se recuperan más tarde), sale un bloque con cuántos se
+generaron, cuántos se consumieron y cuántos quedan pendientes. Sirve para que la
+gestoría entienda un cobro que ese mes no cuadra con ninguna sesión ni factura:
+el dinero entró, la sesión llega después. El importe del crédito solo cuenta una
+vez, el mes en que se pagó.
+
 **No aparece el tipo de terapia.** Ni en el recuento de citas ni en el detalle de
 cobros: el documento va a un tercero (la gestoría) y cruzar a una persona con una
 modalidad de terapia sería darle un dato de salud que no necesita para su trabajo.
+
+**Exportar facturas del mes…** empaqueta en un ZIP todas las facturas emitidas
+ese mes, cada una en su propio PDF, para adjuntarlas al resumen que se manda a la
+gestoría. Si el mes no tiene ninguna factura emitida, avisa en vez de dar un ZIP
+vacío.
 
 **Exportar a PDF…** lo saca ya con los datos fiscales y el logotipo, listo para
 enviarlo.
