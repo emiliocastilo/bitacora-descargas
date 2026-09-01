@@ -1,0 +1,27 @@
+README.md
+  s_4d08938e92438b::t_34b10e21bc4a72 22-23
+_config.yml
+  s_4d08938e92438b::t_bcd9d587da25ed 2-4,7-14,27-28
+_layouts/base.html
+  s_4d08938e92438b::t_d402b29f4768ae 1-316
+_layouts/pagina.html
+  s_4d08938e92438b::t_becc1f92055476 1-7
+index.html
+  s_4d08938e92438b::t_e7820c0dd0a02f 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "bc146475893b3c63079d9ca9089a40173e8ba34e",
+  "prompts": {},
+  "sessions": {
+    "s_4d08938e92438b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e51f2e66-be56-4492-947a-a3df136777e7",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Emilio <emiliojcg@ext.massimodutti.com>"
+    }
+  }
+}
