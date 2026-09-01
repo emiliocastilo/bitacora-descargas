@@ -19,8 +19,8 @@ La guía de uso completa está en **[MANUAL.md](MANUAL.md)** (y en la web de arr
 Cada versión adjunta además su manual en su
 [release](https://github.com/emiliocastilo/bitacora-descargas/releases).
 
-Este archivo, `index.md`, `_config.yml` y `MANUAL.md` se generan desde el repositorio
-del código en cada release; no se editan aquí a mano.
+Este archivo, `index.html`, los `_layouts/`, `_config.yml` y `MANUAL.md` se generan
+desde el repositorio del código en cada release; no se editan aquí a mano.
 
 ## Por qué este repositorio existe
 

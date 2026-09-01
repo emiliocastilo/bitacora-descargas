@@ -1,0 +1,130 @@
+---
+layout: base
+title: Bitácora
+description: Gestión de consulta de psicología — descarga y manual de uso
+---
+
+<section class="hero">
+  <div class="hero-caja">
+    <h1>Tu consulta de psicología, <br>en un solo sitio.</h1>
+    <p>
+      Agenda, historia clínica, informes y facturación en una aplicación de
+      escritorio. Los datos viven cifrados en tu equipo y no salen de ahí.
+    </p>
+
+    <div class="hero-acciones">
+      <a class="boton-descarga" href="https://github.com/emiliocastilo/bitacora-descargas/releases/latest/download/Bitacora-win-Setup.exe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <path d="M7 10l5 5 5-5"></path>
+          <path d="M12 15V3"></path>
+        </svg>
+        <span>Descargar para Windows</span>
+      </a>
+      <div class="hero-meta">
+        {% if site.version %}<span>Versión {{ site.version }}</span><span class="sep">·</span>{% endif %}<span>Windows 10 y 11</span><span class="sep">·</span><span>se actualiza sola</span>
+      </div>
+    </div>
+
+    <div class="hero-mas">
+      <a href="https://github.com/emiliocastilo/bitacora-descargas/releases">Ver todas las versiones y sus notas &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="captura">
+  <div class="captura-caja">
+    <div class="marco-captura">
+      <img src="imagenes/agenda.png" alt="La agenda de Bitácora: la lista de sesiones de la semana, cada una con su importe y su estado de cobro.">
+    </div>
+    <p class="captura-pie">La agenda: cada sesión de la semana con su importe y su estado de cobro.</p>
+  </div>
+</section>
+
+<section class="rasgos">
+  <div class="rasgos-rejilla">
+
+    <div class="rasgo">
+      <div class="icono-rasgo">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path>
+          <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+        </svg>
+      </div>
+      <h3>Agenda y sesiones</h3>
+      <p>Calendario semanal, recordatorios por correo y el estado de cobro de cada sesión a la vista.</p>
+    </div>
+
+    <div class="rasgo">
+      <div class="icono-rasgo">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path>
+        </svg>
+      </div>
+      <h3>Historia clínica</h3>
+      <p>Fichas, evolución, material de trabajo e informes. Todo cifrado en el disco, sin nube.</p>
+    </div>
+
+    <div class="rasgo">
+      <div class="icono-rasgo">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"></path>
+          <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 17.5v-11"></path>
+        </svg>
+      </div>
+      <h3>Facturación</h3>
+      <p>Factura por sesión o por mes, resumen mensual y exportación de todas las facturas.</p>
+    </div>
+
+    <div class="rasgo">
+      <div class="icono-rasgo">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path>
+          <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path>
+        </svg>
+      </div>
+      <h3>Se actualiza sola</h3>
+      <p>Una vez instalada, cada versión nueva llega sola. No hace falta volver a esta página.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="aviso-seccion">
+  <div class="aviso">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21.73 18l-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"></path>
+      <path d="M12 9v4"></path><path d="M12 17h.01"></path>
+    </svg>
+    <div>
+      <div class="aviso-titulo">Al instalar, Windows mostrará un aviso</div>
+      <p>
+        Mientras el ejecutable no está firmado, aparece «Windows protegió tu PC»
+        (SmartScreen). Pulsa <strong>Más información &rarr; Ejecutar de todas
+        formas</strong>. No es un aviso de virus: es lo normal en un programa sin
+        certificado de firma.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="manual-cta">
+  <div class="manual-cta-caja">
+    <div>
+      <div class="rotulo">Manual de uso</div>
+      <h3>Instalar, configurar y el día a día</h3>
+      <p>
+        La guía completa, en el orden en que se hacen las cosas. Cada versión
+        adjunta además su propio manual en su release.
+      </p>
+    </div>
+    <a class="boton-secundario" href="MANUAL.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+      <span>Abrir el manual</span>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% assign titulo = page.title | default: site.title %}
+<title>{{ titulo }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+<style>
+  :root {
+    --tinta: #1C1B19;
+    --papel: #FBFAF9;
+    --superficie: #FFFFFF;
+    --linea: rgba(136, 136, 136, 0.20);
+    --linea-suave: rgba(136, 136, 136, 0.12);
+    --verde: #2E7D52;
+    --verde-oscuro: #256B45;
+    --enlace: #8A6520;
+    --enlace-hover: #6B4E18;
+    --aviso-fondo: rgba(192, 138, 46, 0.09);
+    --aviso-borde: rgba(192, 138, 46, 0.42);
+    --aviso-tinta: #8A6520;
+    --tenue: rgba(28, 27, 25, 0.62);
+    --mas-tenue: rgba(28, 27, 25, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--tinta);
+    background: var(--papel);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: var(--enlace); text-decoration: none; }
+  a:hover { color: var(--enlace-hover); text-decoration: underline; }
+
+  h1, h2, h3, h4 { font-weight: 300; letter-spacing: -0.02em; }
+
+  img { max-width: 100%; }
+
+  .franja { padding-left: 40px; padding-right: 40px; }
+
+  /* --- Cabecera --- */
+  .cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+    flex-wrap: wrap;
+    padding: 18px 40px;
+    border-bottom: 1px solid var(--linea-suave);
+  }
+  .marca { display: flex; align-items: center; gap: 10px; color: inherit; }
+  .marca:hover { text-decoration: none; color: inherit; }
+  .marca svg { color: var(--verde); }
+  .marca span { font-size: 18px; font-weight: 300; letter-spacing: -0.01em; }
+  .nav { display: flex; align-items: center; gap: 24px; font-size: 14px; }
+
+  /* --- Pie --- */
+  .pie {
+    padding: 34px 40px 46px;
+    border-top: 1px solid var(--linea-suave);
+    margin-top: 8px;
+  }
+  .pie-caja {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .pie-nota {
+    margin: 0;
+    max-width: 560px;
+    font-size: 12.5px;
+    color: var(--mas-tenue);
+    line-height: 1.6;
+  }
+  .pie-enlaces { display: flex; gap: 22px; font-size: 13px; }
+
+  /* --- Botones --- */
+  .boton-descarga {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border-radius: 6px;
+    background: var(--verde);
+    border: 1px solid var(--verde);
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 120ms ease;
+  }
+  .boton-descarga:hover { background: var(--verde-oscuro); color: #FFFFFF; text-decoration: none; }
+
+  .boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    color: var(--tinta);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 120ms ease;
+  }
+  .boton-secundario:hover { border-color: rgba(136, 136, 136, 0.45); color: var(--tinta); text-decoration: none; }
+
+  /* --- Portada --- */
+  .hero { padding: 84px 40px 44px; text-align: center; }
+  .hero-caja { max-width: 760px; margin: 0 auto; }
+  .hero h1 { margin: 0; font-size: 46px; line-height: 1.12; text-wrap: balance; }
+  .hero p { margin: 22px auto 0; max-width: 600px; font-size: 17px; color: rgba(28, 27, 25, 0.66); }
+  .hero-acciones { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 34px; }
+  .hero-meta { font-size: 13px; color: var(--mas-tenue); }
+  .hero-meta span { white-space: nowrap; }
+  .hero-meta .sep { margin: 0 10px; opacity: 0.5; }
+  .hero-mas { margin-top: 18px; font-size: 14px; }
+
+  .captura { padding: 0 40px 76px; }
+  .captura-caja { max-width: 1040px; margin: 0 auto; }
+  .marco-captura {
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    background: var(--superficie);
+    padding: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 18px 40px -20px rgba(28, 27, 25, 0.22);
+  }
+  .marco-captura img { display: block; width: 100%; border-radius: 5px; }
+  .captura-pie { margin: 14px 0 0; text-align: center; font-size: 13px; color: var(--mas-tenue); }
+
+  .rasgos {
+    padding: 60px 40px;
+    background: var(--superficie);
+    border-top: 1px solid var(--linea-suave);
+    border-bottom: 1px solid var(--linea-suave);
+  }
+  .rasgos-rejilla {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 28px;
+  }
+  .rasgo h3 { margin: 0; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; }
+  .rasgo p { margin: 6px 0 0; font-size: 13.5px; color: var(--tenue); }
+  .icono-rasgo {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(46, 125, 82, 0.10);
+    color: var(--verde);
+    margin-bottom: 12px;
+  }
+
+  .aviso-seccion { padding: 52px 40px 8px; }
+  .aviso {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--aviso-borde);
+    border-radius: 8px;
+    background: var(--aviso-fondo);
+  }
+  .aviso svg { color: var(--aviso-tinta); margin-top: 2px; }
+  .aviso-titulo { font-weight: 600; font-size: 14px; color: var(--aviso-tinta); }
+  .aviso p { margin: 5px 0 0; font-size: 13.5px; color: rgba(28, 27, 25, 0.72); }
+
+  .manual-cta { padding: 56px 40px 68px; }
+  .manual-cta-caja {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 26px 28px;
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    background: var(--superficie);
+  }
+  .rotulo { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(28, 27, 25, 0.45); }
+  .manual-cta h3 { margin: 8px 0 0; font-size: 20px; }
+  .manual-cta p { margin: 8px 0 0; font-size: 13.5px; color: var(--tenue); max-width: 460px; }
+
+  /* --- Manual (prosa) --- */
+  .contenido {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 40px 72px;
+  }
+  .contenido h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; }
+  .contenido h2 { font-size: 23px; margin: 44px 0 12px; padding-top: 4px; }
+  .contenido h3 { font-size: 18px; font-weight: 500; margin: 30px 0 8px; }
+  .contenido p { margin: 0 0 14px; }
+  .contenido ul, .contenido ol { margin: 0 0 16px; padding-left: 22px; }
+  .contenido li { margin: 4px 0; }
+  .contenido li > ul, .contenido li > ol { margin: 6px 0; }
+  .contenido hr { border: 0; border-top: 1px solid var(--linea); margin: 40px 0; }
+  .contenido a { text-decoration: underline; }
+  .contenido code {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+    font-size: 0.88em;
+    background: rgba(136, 136, 136, 0.14);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  .contenido pre {
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .contenido pre code { background: none; padding: 0; font-size: inherit; }
+  .contenido blockquote {
+    margin: 0 0 16px;
+    padding: 2px 16px;
+    border-left: 3px solid var(--linea);
+    color: var(--tenue);
+  }
+  .contenido table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 18px;
+    font-size: 14px;
+  }
+  .contenido th, .contenido td {
+    border: 1px solid var(--linea);
+    padding: 7px 11px;
+    text-align: left;
+  }
+  .contenido th { background: rgba(136, 136, 136, 0.08); font-weight: 500; }
+  .contenido img { border: 1px solid var(--linea); border-radius: 8px; }
+  .volver { display: inline-block; margin-bottom: 24px; font-size: 14px; }
+
+  @media (max-width: 720px) {
+    .franja, .cabecera, .pie, .hero, .captura, .rasgos, .aviso-seccion, .manual-cta {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    .hero { padding-top: 56px; }
+    .hero h1 { font-size: 27px; }
+    .hero h1 br { display: none; }
+    .hero p { font-size: 15.5px; }
+    .rasgos-rejilla { grid-template-columns: 1fr 1fr; gap: 26px 20px; }
+    .manual-cta-caja { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .nav { gap: 16px; font-size: 13px; }
+    .contenido { padding: 40px 22px 56px; }
+  }
+
+  @media (max-width: 460px) {
+    .rasgos-rejilla { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <a class="marca" href="./">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      <path d="M9.5 7.5h6"></path>
+    </svg>
+    <span>Bitácora</span>
+  </a>
+  <nav class="nav">
+    <a href="MANUAL.html">Manual</a>
+    <a href="https://github.com/emiliocastilo/bitacora-descargas/releases">Todas las versiones</a>
+  </nav>
+</header>
+
+{{ content }}
+
+<footer class="pie">
+  <div class="pie-caja">
+    <p class="pie-nota">
+      Aquí solo se publican el instalador y el manual: ningún dato de pacientes,
+      ninguna base de datos, ninguna copia de seguridad. El código fuente vive en
+      un repositorio privado aparte.
+    </p>
+    <div class="pie-enlaces">
+      <a href="MANUAL.html">Manual</a>
+      <a href="https://github.com/emiliocastilo/bitacora-descargas/releases">Versiones</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

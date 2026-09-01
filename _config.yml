@@ -1,9 +1,17 @@
 # Configuración de GitHub Pages del repositorio público de descargas
-# (emiliocastilo/bitacora-descargas). Este archivo, index.md y el manual se
-# copian allí desde el flujo de release; no se editan en el repo público a mano.
+# (emiliocastilo/bitacora-descargas). Este archivo, index.html, los _layouts y
+# el manual se copian allí desde el flujo de release; no se editan en el repo
+# público a mano. El flujo añade además una línea "version: X.Y.Z" al final.
 title: Bitácora
 description: Gestión de consulta de psicología — descarga y manual de uso
-theme: jekyll-theme-cayman
+
+# Sin tema: la portada (index.html) y el manual comparten _layouts/base.html.
+# El manual, sin cabecera Jekyll propia, entra por _layouts/pagina.html.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: pagina
 
 # Todos incluidos en el gem github-pages:
 #  - optional-front-matter: procesa MANUAL.md aunque no lleve cabecera Jekyll
@@ -16,3 +24,5 @@ plugins:
 
 exclude:
   - README.md
+
+version: 0.1.6
