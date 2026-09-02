@@ -69,12 +69,14 @@ que existe contra eso.
 ## 3. Dejar la consulta lista
 
 Al entrar se aterriza en **Administración**, repartida en pestañas: *Consulta*,
-*Tarifas*, *Cuestionarios*, *Seguridad y copias*, *Conexiones* y *Diagnóstico*.
+*Tarifas*, *Cuestionarios*, *Seguridad y copias*, *Conexiones*, *Diagnóstico* y
+*Tema*.
 
 Para dejar la consulta lista hay que pasar por cuatro, y ya no se vuelven a
 tocar salvo que cambie algo: **Consulta** (§3.1), **Tarifas** (§3.2), **Seguridad
 y copias** (§3.3 y §3.4) y **Conexiones** (§3.5). *Cuestionarios* solo hace falta
-si se van a pasar test (§6), y *Diagnóstico* (§3.6) no se toca.
+si se van a pasar test (§6), *Diagnóstico* (§3.6) no se toca y *Tema* (§3.7) es
+cuestión de gusto.
 
 ![Pantalla de Administración, abierta por la pestaña Consulta con los datos de la profesional](imagenes/administracion.png)
 
@@ -189,6 +191,19 @@ técnica y datos del equipo (versión, sistema, espacio en disco). Desde esa
 misma pestaña se puede **desactivar el envío automático** y marcar cada
 incidencia como revisada. El registro no se borra.
 
+### 3.7 Tema
+
+En **Administración › Tema** se elige el aspecto de la aplicación: **Claro**,
+**Oscuro** o **Automático**. Cambia en cuanto se pulsa —no hay que guardar ni
+volver a entrar— y así se queda para los siguientes arranques.
+
+**Automático** es lo que viene de fábrica: la aplicación sigue al sistema, de
+modo que si Windows se pone oscuro al anochecer, Bitácora también.
+
+El tema es de **este ordenador**, no de la consulta: no viaja con los datos ni
+con las copias de seguridad, así que el portátil puede ir en oscuro y el
+ordenador de la mesa en claro.
+
 ---
 
 ## 4. El día a día
@@ -251,7 +266,44 @@ Word en vez de un PDF, o varios archivos a la vez).
 
 ## 5. Agenda
 
-![Vista de Agenda con las sesiones del periodo elegido](imagenes/agenda.png)
+![Vista de Agenda en modo Semana, con las sesiones en su hora](imagenes/agenda.png)
+
+### Los tres modos
+
+La Agenda es un calendario y se mira de tres maneras, que se eligen en la
+cabecera:
+
+- **Día**: la jornada entera, hora a hora. Como la columna es ancha, cada sesión
+  se lee de un vistazo sin tener que abrirla: hora de inicio y fin, duración,
+  paciente, importe y cobro. Arriba de todo, cuántas sesiones hay, lo que suman y
+  cuánto queda por cobrar ese día.
+- **Semana**: una columna por día. Es el modo de trabajo y con el que se entra.
+- **Mes**: las semanas completas, con las sesiones escritas dentro de cada
+  casilla. Es para encuadrar el mes, no para cobrar; por eso aquí no sale el
+  panel de la derecha y sí un pie con las sesiones del mes, lo previsto, lo
+  cobrado y lo que sigue sin cobrar.
+
+Las flechas **‹** y **›** mueven un día, una semana o un mes, según el modo en
+el que se esté. **Hoy** vuelve al presente.
+
+En Día y en Semana una línea fina cruza la jornada de hoy por la hora que es, y
+la franja que se dibuja va de las 8 a las 20 salvo que haya sesiones fuera de
+ella: entonces se estira lo que haga falta, porque una rejilla más alta se baja
+con la barra y una sesión escondida no se ve nunca.
+
+**Fin de semana** añade el sábado y el domingo. Viene apagado porque la consulta
+no suele pasar sesión esos días y, sin esas dos columnas, las cinco de diario
+son bastante más anchas. Si hay una sesión en sábado o en domingo, su columna
+sale igual aunque el interruptor esté apagado: una preferencia de ancho no puede
+esconder una cita.
+
+### Del mes al día
+
+En **Mes**, cada fila lleva a la izquierda una franja estrecha con el número de
+la semana. Al pulsarla, esa semana se abre en modo Semana. Y al pulsar una
+casilla se abre ese día. Es el camino natural de trabajo: el mes enseña dónde
+está la carga y desde ahí se entra a trabajarla, sin volver a **Hoy** y contar
+flechas.
 
 ### Agendar una sesión
 
@@ -267,6 +319,12 @@ el campo que aparece debajo.
 
 Pulsar **Agendar**.
 
+Hay un atajo que ahorra teclear la fecha: en **Día** y en **Semana**, al pasar
+el ratón por un rato libre aparece **+ Agendar a las …**. Al pulsarlo se abre la
+misma ventana con ese día y esa hora ya puestos. Los ratos libres se ofrecen de
+media hora en media hora, para que encajen también las sesiones de 30 y de 45
+minutos.
+
 ### Avisar al paciente
 
 Justo después de agendar sale una ventana **Enviar la cita** con el correo ya
@@ -274,31 +332,70 @@ redactado: destinatario, asunto y mensaje, todo modificable. **Enviar al
 paciente** lo manda; **Ahora no** lo deja sin enviar. La sesión queda agendada
 en los dos casos: esa ventana solo decide si se avisa.
 
+La misma ventana sale al **reprogramar** una sesión, con los datos de la cita
+nueva y el texto adaptado para que se entienda que es un cambio de hora, no una
+cita más.
+
 Si el paciente no tiene correo en la ficha, se puede escribir ahí mismo.
+
+**Por WhatsApp**: clic derecho sobre la sesión en el calendario, **Copiar cita
+para WhatsApp**. Copia el mismo texto del correo al portapapeles, listo para pegarlo
+en la conversación. No envía nada: solo copia.
+
+**El recordatorio automático** (§3.2) se manda al abrir Bitácora, no por su
+cuenta con el ordenador apagado: si un día no se abre el programa, ese día no se
+avisa a nadie. Es a propósito, porque un envío que falla sin que nadie lo vea es
+peor que no enviarlo. Cada sesión se recuerda una sola vez, así que abrir y
+cerrar el programa varias veces no repite el correo.
 
 ### Los colores del cobro
 
-En la columna **Cobro**:
+Cada sesión lleva su color de cobro en el filete de la izquierda del bloque, y
+el texto que dice lo mismo sale en el panel de la derecha al elegirla (en **Mes**,
+en la leyenda del pie). El color va siempre acompañado de su texto: impreso en
+blanco y negro, o visto con daltonismo, no distingue una sesión impagada de una
+que se abona por haberse cancelado tarde.
 
-- **Verde**: pagada.
-- **Neutro**: sin pagar, pero todavía queda margen antes de la sesión.
-- **Ámbar**: sin pagar y ya dentro de las horas de aviso. Es la que hay que
-  mirar.
-- **Azul**: cancelada sin cargo, pero ya estaba pagada: el importe queda como
-  crédito para una sesión de recuperación.
+Las sesiones que no llegaron a darse —canceladas o con ausencia— salen además
+tachadas: el color dice cuánto se cobra, y el tachado dice si ocurrió, que son
+dos preguntas distintas.
+
+- **Verde** · «Pagada»: cobrada. Ya se puede facturar. Al elegir la sesión,
+  debajo pone por dónde entró el dinero: «Cobrada por bizum», por ejemplo.
+- **Neutro** · «Pendiente»: sin pagar, pero todavía queda margen antes de la
+  sesión.
+- **Ámbar** · «Sin pagar · menos de 24 h»: sin pagar y ya dentro de las horas de
+  aviso. Es la que hay que mirar.
+- **Rojo** · «Impagada»: la sesión ya ha empezado y sigue sin cobrarse.
+- **Rojo** · «Se abona íntegra»: cancelada fuera de plazo, o ausencia sin avisar.
+  Se cobra aunque no se haya dado.
+- **Azul** · «Sin cargo · crédito»: cancelada sin cargo, pero ya estaba pagada:
+  el importe queda como crédito para una sesión de recuperación.
+- **Gris** · «Sin cargo»: cancelada en plazo. No hay nada que cobrar.
 
 ### Cerrar una sesión
 
-Al elegir una sesión de la lista se habilita el panel de la derecha:
+Al pulsar una sesión del calendario se llena el panel de la derecha:
 
-- **Marcar como pagada** (y **Anular el pago** si se marcó por error).
+- **Pagada**, que cobra por Bizum sin preguntar, que es como entra casi todo. El
+  botón lleva pegada una flechita a la derecha: al pulsarla salen **Pagada por
+  Bizum** y **Pagada por transferencia**, para el cobro que no vino por Bizum. La
+  forma de pago queda guardada y es la que luego sale impresa en la factura. (Y
+  **Anular el pago** si se marcó por error.)
 - **Realizada**: la sesión se dio.
 - **No asistió**: no vino y no avisó. Se cobra.
 - **Reprogramar**: mueve la sesión a otra fecha conservando el importe y el
   pago. Es lo que se usa cuando el paciente no puede venir pero se le va a dar
-  la sesión igualmente.
-- **Cancelar sesión**: cancelada con menos aviso del pactado. Se cobra entera.
-- **Cancelar sin cargo**: cancelada en plazo, o por fuerza mayor. No se cobra.
+  la sesión igualmente. Al confirmar el cambio sale la misma ventana de aviso
+  que al agendar, esta vez con la fecha nueva y diciendo que la cita se ha
+  movido; **Ahora no** la deja sin enviar y la sesión queda movida igualmente.
+- **Cancelar sesión**: la cancelación normal. No hay que echar cuentas: el
+  programa mira la hora y decide solo. Si el aviso ha llegado con el margen
+  pactado por delante, la sesión queda sin cargo; si ha llegado por debajo de
+  ese margen, se abona entera.
+- **Cancelar sin cargo**: fuerza mayor. No se cobra aunque el aviso llegue
+  tarde. Es la excepción que recoge el consentimiento, y la decisión de aplicarla
+  es tuya.
 
 Si al dar una sesión por **realizada** ya estaba pagada, sale una ventana
 **Emitir factura** que ofrece facturarla ahí mismo, sin pasar por Facturación. Si
@@ -337,6 +434,32 @@ Desde **Pacientes** → **Abrir ficha**.
 La ficha reúne los datos de la persona, sus casos abiertos, si tiene el
 consentimiento firmado, sus informes y el material de trabajo que se le
 haya pasado.
+
+### Corregir los datos de un paciente
+
+En la pestaña **Resumen** de la ficha, la tarjeta **Datos** tiene un botón
+**Editar**. Ahí se corrigen nombre, apellidos, DNI o NIE, fecha de nacimiento,
+teléfono y correo: un número que cambia, un apellido que faltaba, o el documento
+que se tecleó mal el primer día. **Descartar** deja la ficha como estaba.
+
+El **domicilio** se corrige aparte, con su propio **Editar** justo debajo, porque
+va todo o nada (calle, código postal, municipio y provincia).
+
+Se comprueba lo mismo que al dar de alta: el DNI o NIE tiene que ser válido y no
+puede ser el de otra ficha, el correo tiene que estar bien escrito y la fecha de
+nacimiento no puede quedar en el futuro. Si algo no cuadra, se dice y el
+formulario se queda abierto con lo tecleado.
+
+Cada corrección queda anotada en el **registro de accesos**, y la anotación dice
+qué campos cambiaron. Eso es lo que acredita haber atendido una **rectificación**
+si el paciente la pide.
+
+Dos avisos:
+
+- Si se cambia el nombre o los apellidos, cambia también el **seudónimo** con el
+  que la persona aparece en Google Calendar (§3.5). Las citas ya creadas conservan
+  el anterior.
+- Una ficha **suprimida** no se corrige: hay que restaurarla antes.
 
 ### La historia clínica
 
@@ -474,11 +597,18 @@ cada una. Una sesión sin cobrar no aparece en la lista.
 La factura sale **exenta de IVA** por el artículo 20.Uno.3º de la Ley del IVA,
 que es lo que corresponde a la asistencia sanitaria.
 
-**El concepto es siempre «Terapia online».** No dice la modalidad (individual o
+**El concepto es siempre «Terapia de psicología».** No dice la modalidad (individual o
 de pareja): esa factura puede acabar en manos de terceros y el tipo de terapia
 es un dato de salud. Solo cuando se cobra una sesión a la que el paciente no
 asistió, o una cancelación fuera de plazo, se añade «(sesión no realizada)» para
 que se entienda el cargo.
+
+**La factura sale en el impreso de siempre**: arriba, los datos de la consulta y
+el número y la fecha; debajo, los del paciente por casillas (nombre, dirección,
+población, código postal y provincia, que se toman de su domicilio en la ficha);
+en medio, el concepto y el importe; y abajo el cuadro de IVA —al 0 %, por la
+exención—, la forma de pago y el total. Si el paciente no tiene domicilio en la
+ficha, esas casillas salen con un guion: conviene rellenarlo antes de emitir.
 
 **Una factura emitida no se edita.** Si hay un error, se corrige con **Emitir
 rectificativa**, que es lo que exige la normativa. **Exportar a PDF…** la saca
