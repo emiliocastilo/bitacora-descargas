@@ -30,8 +30,8 @@ No pregunta dónde instalar ni dónde guardar los datos: eso ya está decidido. 
 programa se instala en la carpeta del usuario y los datos van a `Documentos\Bitacora`
 (si Documentos estuviera sincronizado con OneDrive, van a una carpeta local del
 equipo, para no corromper la base). La ruta exacta se ve luego en
-**Administración**, debajo del título; conviene saberla para las copias en USB
-(sección 7).
+**Administración**, debajo del título; conviene saberla para las [copias en
+USB](#7-copias-de-seguridad-y-recuperación).
 
 Después, la aplicación se actualiza sola. Cada vez que se abre comprueba si hay
 versión nueva; cuando la hay, aparece un botón **Actualizar y reiniciar** al pie
@@ -47,7 +47,8 @@ Al abrirla por primera vez sale **«Vamos a preparar la consulta»**.
    caracteres.
 2. Repetirla y pulsar **Crear la consulta**.
 3. Aparece una última pantalla, **«Conectar con Google»**. Se puede hacer ahora
-   —hace falta el archivo `client_secret.json`, explicado en §3.5— o pulsar
+   —hace falta el archivo `client_secret.json`, explicado en
+   [Conectar Google](#35-conectar-google)— o pulsar
    **Ahora no** y dejarlo para más tarde. En los dos casos se entra a
    continuación en **Administración**.
 
@@ -73,10 +74,13 @@ Al entrar se aterriza en **Administración**, repartida en pestañas: *Consulta*
 *Tema*.
 
 Para dejar la consulta lista hay que pasar por cuatro, y ya no se vuelven a
-tocar salvo que cambie algo: **Consulta** (§3.1), **Tarifas** (§3.2), **Seguridad
-y copias** (§3.3 y §3.4) y **Conexiones** (§3.5). *Cuestionarios* solo hace falta
-si se van a pasar test (§6), *Diagnóstico* (§3.6) no se toca y *Tema* (§3.7) es
-cuestión de gusto.
+tocar salvo que cambie algo: [**Consulta**](#31-consulta),
+[**Tarifas**](#32-tarifas), **Seguridad y copias** —[la clave de
+recuperación](#33-la-clave-de-recuperación) y [la verificación en dos
+pasos](#34-verificación-en-dos-pasos-opcional-recomendable)— y
+[**Conexiones**](#35-conectar-google). *Cuestionarios* solo hace falta si se van
+a pasar [test](#cuestionarios), *[Diagnóstico](#36-informes-de-diagnóstico)* no
+se toca y *[Tema](#37-tema)* es cuestión de gusto.
 
 ![Pantalla de Administración, abierta por la pestaña Consulta con los datos de la profesional](imagenes/administracion.png)
 
@@ -90,8 +94,9 @@ Tres cosas en esta pestaña:
 - **Consentimiento vigente**: una etiqueta con la versión del documento de
   consentimiento que se está haciendo firmar (por ejemplo `2026-01`). No es el
   documento en sí —el consentimiento firmado de cada paciente se guarda en su
-  ficha (§4)—, solo sirve para saber quién firmó qué: al cambiar la versión, las
-  fichas que habían firmado la anterior quedan marcadas para volver a firmar.
+  ficha, ver [Registrar el consentimiento](#registrar-el-consentimiento)—, solo
+  sirve para saber quién firmó qué: al cambiar la versión, las fichas que habían
+  firmado la anterior quedan marcadas para volver a firmar.
 - **Logotipo de la consulta**: se estampa como marca de agua muy atenuada en las
   facturas e informes que se exporten. Opcional.
 
@@ -122,7 +127,8 @@ Las sesiones ya agendadas conservan el importe que tenían.
 ### 3.3 La clave de recuperación
 
 En la pestaña **Seguridad y copias** hay cuatro apartados: el registro de accesos
-y las copias de seguridad (los dos explicados en §7), la clave de recuperación y
+y las copias de seguridad (los dos explicados en [Copias de seguridad y
+recuperación](#7-copias-de-seguridad-y-recuperación)), la clave de recuperación y
 la verificación en dos pasos. Los dos últimos se dejan puestos ahora.
 
 Esto es lo más importante de toda la guía.
@@ -157,8 +163,9 @@ A partir de ahí, cada vez que se entre se pedirá la contraseña y después ese
 código. Para desactivarlo hacen falta la contraseña y un código válido.
 
 **Si se pierde el móvil.** Se entra con la clave de recuperación en papel (la de
-§3.3, ahora sí): al hacerlo, la verificación en dos pasos se apaga y hay que
-volver a configurarla con el móvil nuevo. Por eso el papel sigue siendo
+[La clave de recuperación](#33-la-clave-de-recuperación), ahora sí): al hacerlo,
+la verificación en dos pasos se apaga y hay que volver a configurarla con el
+móvil nuevo. Por eso el papel sigue siendo
 imprescindible aunque se use el segundo factor.
 
 **La hora tiene que estar bien.** El código depende del reloj: si el del ordenador
@@ -171,8 +178,9 @@ Sirve para tres cosas: meter las sesiones en el calendario, crear los enlaces
 de Meet, y subir las copias de seguridad a Drive.
 
 Se conecta desde **Administración › Conexiones** (o en la pantalla del primer
-arranque, §2) cargando el archivo de credenciales `client_secret.json`. Se abre
-el navegador, se acepta con la cuenta de la consulta, y ya queda.
+arranque, [Crear la consulta](#2-crear-la-consulta-solo-la-primera-vez))
+cargando el archivo de credenciales `client_secret.json`. Se abre el navegador,
+se acepta con la cuenta de la consulta, y ya queda.
 
 **Qué ve Google y qué no.** En el calendario solo aparece una etiqueta del tipo
 `Sesión · AR-3f9c1b`: nunca el nombre del paciente ni el motivo. El paciente no
@@ -213,6 +221,11 @@ Cinco secciones a la izquierda: **Agenda**, **Pacientes**, **Facturación**,
 
 ![Listado de pacientes, con el filtro de casos abiertos y los botones de Abrir ficha y Dar de alta](imagenes/pacientes.png)
 
+En la primera columna del listado aparece una **tarta** junto a quien cumple años
+ese día, para poder felicitarle al entrar por la puerta. Sale solo el día del
+cumpleaños y no hace nada más: no cambia la ficha ni avisa a nadie. A quien nació
+un 29 de febrero se le marca el 28 los años que no son bisiestos.
+
 ### Dar de alta a un paciente
 
 **Pacientes** → **Dar de alta**. Se abre una ventana: nombre, apellidos, DNI o
@@ -249,7 +262,8 @@ pero su historia, sus informes y sus facturas se conservan. Si hay que retomarlo
 **Reabrir** lo vuelve a activar.
 
 Cerrar los casos hace falta, además, para poder **suprimir** la ficha más
-adelante (§10): una ficha con casos abiertos no se puede suprimir.
+adelante, ver [Cosas que conviene saber](#10-cosas-que-conviene-saber): una ficha
+con casos abiertos no se puede suprimir.
 
 ### Registrar el consentimiento
 
@@ -342,8 +356,9 @@ Si el paciente no tiene correo en la ficha, se puede escribir ahí mismo.
 para WhatsApp**. Copia el mismo texto del correo al portapapeles, listo para pegarlo
 en la conversación. No envía nada: solo copia.
 
-**El recordatorio automático** (§3.2) se manda al abrir Bitácora, no por su
-cuenta con el ordenador apagado: si un día no se abre el programa, ese día no se
+**El recordatorio automático** (el que se configura en [Tarifas](#32-tarifas))
+se manda al abrir Bitácora, no por su cuenta con el ordenador apagado: si un día
+no se abre el programa, ese día no se
 avisa a nadie. Es a propósito, porque un envío que falla sin que nadie lo vea es
 peor que no enviarlo. Cada sesión se recuerda una sola vez, así que abrir y
 cerrar el programa varias veces no repite el correo.
@@ -382,6 +397,13 @@ Al pulsar una sesión del calendario se llena el panel de la derecha:
   Bizum** y **Pagada por transferencia**, para el cobro que no vino por Bizum. La
   forma de pago queda guardada y es la que luego sale impresa en la factura. (Y
   **Anular el pago** si se marcó por error.)
+- **Corregir la forma de pago**, en una sesión ya cobrada: sale al pulsarlo un
+  desplegable con **Se cobró por Bizum** y **Se cobró por transferencia**. Es
+  para cuando se marcó por Bizum lo que llegó por transferencia. Cambia solo la
+  forma; **la fecha del cobro no se mueve**, que es lo que pasaría anulando el
+  pago y volviéndolo a marcar. Si esa sesión ya estaba facturada, la factura no
+  cambia: para eso hay que rectificarla y emitirla de nuevo (ver
+  [Facturación](#8-facturación)).
 - **Realizada**: la sesión se dio.
 - **No asistió**: no vino y no avisó. Se cobra.
 - **Reprogramar**: mueve la sesión a otra fecha conservando el importe y el
@@ -400,7 +422,8 @@ Al pulsar una sesión del calendario se llena el panel de la derecha:
 Si al dar una sesión por **realizada** ya estaba pagada, sale una ventana
 **Emitir factura** que ofrece facturarla ahí mismo, sin pasar por Facturación. Si
 el caso es de pareja se elige a quién se le factura; si no, basta con confirmar.
-**Ahora no** la deja sin facturar: se puede emitir después desde Facturación (§8).
+**Ahora no** la deja sin facturar: se puede emitir después desde la sección de
+[Facturación](#8-facturación).
 
 ### Una sesión pagada que se cancela
 
@@ -457,7 +480,8 @@ si el paciente la pide.
 Dos avisos:
 
 - Si se cambia el nombre o los apellidos, cambia también el **seudónimo** con el
-  que la persona aparece en Google Calendar (§3.5). Las citas ya creadas conservan
+  que la persona aparece en Google Calendar (ver
+  [Conectar Google](#35-conectar-google)). Las citas ya creadas conservan
   el anterior.
 - Una ficha **suprimida** no se corrige: hay que restaurarla antes.
 
@@ -578,7 +602,8 @@ Sin ese código no hay ninguna otra vía. No existe un «te enviamos un correo»
 si lo hubiera, quien entrara en el correo entraría en las historias clínicas.
 
 Si estaba activada la verificación en dos pasos, al recuperar el acceso así se
-apaga: hay que volver a configurarla (§3.4).
+apaga: hay que volver a configurarla (ver [Verificación en dos
+pasos](#34-verificación-en-dos-pasos-opcional-recomendable)).
 
 ---
 
@@ -607,12 +632,52 @@ que se entienda el cargo.
 el número y la fecha; debajo, los del paciente por casillas (nombre, dirección,
 población, código postal y provincia, que se toman de su domicilio en la ficha);
 en medio, el concepto y el importe; y abajo el cuadro de IVA —al 0 %, por la
-exención—, la forma de pago y el total. Si el paciente no tiene domicilio en la
-ficha, esas casillas salen con un guion: conviene rellenarlo antes de emitir.
+exención—, la forma de pago y el total.
 
-**Una factura emitida no se edita.** Si hay un error, se corrige con **Emitir
-rectificativa**, que es lo que exige la normativa. **Exportar a PDF…** la saca
-para enviarla.
+**Sin domicilio del paciente y sin forma de pago, la factura no sale.** Son
+contenido obligatorio del impreso, y una factura emitida ya no se puede
+retocar. Si falta el domicilio, la aplicación lo dice por su nombre y hay que
+completarlo en la ficha del paciente; si la sesión no dice cómo se cobró, se
+arregla en la Agenda con **Corregir la forma de pago**.
+
+### Corregir una factura ya emitida
+
+**Una factura emitida no se edita**: la numeración es correlativa y sin huecos,
+y con VeriFactu además será irreversible. Un error se corrige en dos pasos:
+
+1. **Arreglar el dato donde vive**: el domicilio o el NIF, en la ficha del
+   paciente; la forma de pago, en la Agenda.
+2. Seleccionar la factura y pulsar **Emitir rectificativa**. Se abre una ventana
+   que enseña **con qué datos va a salir** —nombre, NIF, dirección, forma de pago
+   e importe, releídos de la ficha y de la sesión— y pide **la causa**. Solo hace
+   falta escribirla («faltaba el domicilio del destinatario») y confirmar.
+
+Esa ventana es la que evita repetir el error: si el domicilio sigue sin estar,
+lo dice ahí y no deja emitir. Y si la factura salió a nombre del miembro
+equivocado de una pareja, también se cambia ahí a quién se le factura.
+
+**La rectificativa sustituye a la factura que corrige.** Sale por el mismo
+importe y **en positivo** —el servicio se prestó y se cobró; no es un abono—,
+pero con los datos ya buenos, y lleva impreso a qué factura sustituye, con qué
+fecha y por qué causa. Va en **serie propia** (`R2026/0001`, frente a
+`F2026/0001` de las ordinarias). Desde ese momento, la rectificativa es la
+factura válida de esa sesión y es la que se entrega al paciente.
+
+En el listado, la columna **Situación** dice en qué estado quedó cada una:
+*Vigente*, *Rectificada* (sustituida por la suya) o *Rectificativa de…*. Ninguna
+se borra: todas quedan guardadas y numeradas.
+
+**Si hay que volver a corregir**, se rectifica **la rectificativa**, no la
+factura de partida: `F2026/0006` → `R2026/0001` → `R2026/0002`. La aplicación no
+deja rectificar dos veces la misma —dejaría dos facturas vivas para una sola
+sesión— y te dice cuál es la que está vigente.
+
+Cuidado con una cosa: la rectificativa es para **corregir un error** de la
+factura. Si el paciente simplemente se ha mudado *después* de que se le
+emitiera, esa factura no estaba mal y no hay nada que rectificar; la dirección
+nueva sale sola en las facturas siguientes.
+
+**Exportar a PDF…** saca cualquiera de ellas para enviarla.
 
 ---
 
